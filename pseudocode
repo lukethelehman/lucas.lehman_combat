@@ -1,0 +1,120 @@
+Tbc.py
+
+Create a Character class (based on the built in object class)
+Initialize method (constructor) with parameters Self, Name, hitPoints, hitChance, maxDamage, armor – give them each default value
+Super init to initialize the built in object class
+Self.Name = name 
+self.hitPoints = hitPoints, etc. for each attribute (put parameter values in attributes)
+
+	@property
+	Define name(self)
+		Return the name attribute
+	@name.setter
+	Takes self and value and gives the attribute self the value
+
+
+	@Property
+	Define hitPoints(self)
+		Return the hitPoints attribute
+	@hitPoints.setter
+	Takes self and value 
+		Set hitPoints attribute equal to testInt() method (any integer, default 10)
+	
+	
+	@property
+	Define hitChance(self)
+		Return the  hitChance attribute
+	@hitChance.setter
+	Takes self and value
+	Set hitChance attribute equal to testInt (integer from 0-100, default 50)
+	
+
+	@property
+	Define maxDamage(self)
+		Return the max damage attribute 
+	@maxDamage.setter
+	Set maxDamage attribute equal to testInt (any positive integer , default 5)
+	
+
+
+
+
+
+	@property
+	Define Armor(self)
+		Return the armor attribute 
+	@armor.setter
+	Set armor attribute equal to testInt (any positive integer, default 2)
+	
+	
+	printStats(self) –
+		print character name
+		print a line of equals signs to format
+		print each property of the character – (Hit Points : 10), etc.
+		
+
+testInt() receives self, value, min, max, and a default
+	out equals default
+	if value is an int
+		if value is greater than the min
+			if value is less than the max
+				out equals value
+			else
+				print “too large”
+		print “too small”
+	print “must be an int”
+	return out
+
+	hit() – receives self and opponent 
+		rand = random integer from 1-100 
+		if rand is less than or equal to the hit chance (a hit occurs)
+			set damage equal to a random number between one and max damage
+			netDamage equals damage minus opponent armor 
+			if net damage is less than 0 
+				net damage equals zero (prevents hitPoints from going up)
+			opponents hit points = their hit points minus netDamage
+			print message letting the user know what happened in the hit
+
+
+
+
+
+
+
+
+
+
+fight() receives two instances of the characters 
+	keepGoing is True 
+	
+	while keepGoing
+		tell user to press enter for a round
+		if they press something other than enter
+			keepGoing is False
+		character 1 hits character 2 with hit() method
+		if character 2s hit points are less or equal to zero
+			print character two has been defeated
+			keepGoing is False
+		character 2 hits character 1
+if character 1s hit points are less or equal to zero
+			print character one has been defeated
+			keepGoing is False
+		print both characters HP
+
+
+
+combat.py
+
+import tbc module
+
+main()
+	<hero> gets an instance of the tbc module character(default parameters or choose)
+	<monster> gets another instance of character 
+	
+	Print stats of each character 
+	
+	Tbc fight method (hero and monster)
+	
+	If __name__ is main
+		Main()
+
